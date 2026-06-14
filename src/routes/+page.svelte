@@ -60,7 +60,33 @@
 
 <footer class="site-footer">
   <div class="footer-bottom">
-    <h2 class="footer-logo">PARK RESIDENCY</h2>
+    <div class="footer-contact">
+      <img src={restaurant.logo} alt={restaurant.name} class="footer-logo-img" />
+      <h2 class="footer-logo">{restaurant.name}</h2>
+      
+      <div class="contact-details">
+        <p class="contact-item"><strong>Our Location:</strong><br>{restaurant.location}</p>
+        <p class="contact-item"><strong>Phone:</strong><br><a href="tel:{restaurant.phone.replace(/\\s+/g, '')}">{restaurant.phone}</a></p>
+        <p class="contact-item"><strong>Email:</strong><br>
+          {#each restaurant.emails as email}
+            <a href="mailto:{email}">{email}</a><br>
+          {/each}
+        </p>
+      </div>
+
+      <div class="social-links">
+        {#if restaurant.facebook}
+          <a href={restaurant.facebook} target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+        {/if}
+        {#if restaurant.instagram}
+          <a href={restaurant.instagram} target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+        {/if}
+        {#if restaurant.whatsapp}
+          <a href={restaurant.whatsapp} target="_blank" rel="noopener noreferrer" class="social-link">WhatsApp</a>
+        {/if}
+      </div>
+    </div>
+    
     <p class="footer-text">© 2026 {restaurant.name}. All rights reserved.</p>
     
     <div class="footer-powered">
@@ -163,16 +189,77 @@
     padding: 48px 24px;
   }
 
+  .footer-logo-img {
+    width: 60px;
+    height: auto;
+    margin-bottom: 8px;
+  }
+
   .footer-logo {
     font-family: var(--font-serif);
     font-size: 1.8rem;
     letter-spacing: 2px;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+    margin-top: 0;
+  }
+
+  .footer-contact {
+    max-width: 500px;
+    margin: 0 auto 32px;
+  }
+
+  .contact-details {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-item {
+    font-size: 0.9rem;
+    color: var(--bg-primary);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .contact-item strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .contact-item a {
+    color: var(--bg-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-item a:hover {
+    color: var(--accent);
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .social-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+
+  .social-link:hover {
+    opacity: 0.8;
   }
 
   .footer-text {
     font-size: 0.8rem;
     color: rgba(193, 159, 95, 0.7);
+    margin-top: 32px;
   }
 
   .footer-powered {

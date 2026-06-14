@@ -7,17 +7,17 @@
 <div class="hero">
 
   <div class="hero-content">
-    <h3 class="subtitle">Urban House Restobar</h3>
-    <h1 class="title">Sip, Savor & Socialize</h1>
-    <p class="desc">Explore our vibrant bar menu—crafted cocktails, drink specials, and flavorful bites await. Make every visit memorable at {restaurant.name}.</p>
+    <h3 class="subtitle">Olea Bakery & Resto Cafe</h3>
+    <h1 class="title">Premium Baked Goods & Cafe</h1>
+    <p class="desc">Explore our crafted coffees, signature frappes, and flavorful bites. Make every visit memorable at {restaurant.name}.</p>
     
     <div class="image-container">
-      <img src={restaurant.heroImage} alt="Hero" class="hero-image" />
+      <img src={restaurant.logo} alt={restaurant.name} class="hero-logo" />
     </div>
 
     <div class="bottom-content">
-      <h3 class="subtitle">Signature Sips & Savory Bites</h3>
-      <p class="desc">Discover our standout cocktails, drink specials, and curated food pairings. At {restaurant.name}'s Urban House Restobar, our menu is crafted to perfection.</p>
+      <h3 class="subtitle">Crafted Coffee & Beverages</h3>
+      <p class="desc">Discover our standout espresso drinks, signature frappes, and premium teas. At {restaurant.name}, our menu is crafted to perfection.</p>
     </div>
   </div>
 </div>
@@ -64,12 +64,11 @@
     margin-bottom: 32px;
   }
 
-  .hero-image {
+  .hero-logo {
     width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-md);
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
   }
 
   .bottom-content {
@@ -83,8 +82,8 @@
     .desc {
       font-size: 1.1rem;
     }
-    .hero-image {
-      max-height: 500px;
+    .hero-logo {
+      max-width: 250px;
     }
   }
 </style>
