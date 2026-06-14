@@ -55,16 +55,46 @@
       {/each}
     </div>
   </main>
+
+  <section class="coffee-story container">
+    <div class="editorial-intro">
+      <h2 class="editorial-title">Our Coffee Beans</h2>
+      <p class="editorial-quote">
+        At Olea, we take pride in serving only the finest organic, single-origin coffee. The beans are carefully sourced to ensure the highest quality and a truly exceptional coffee experience. Our coffee beans come from nutrient-rich plots nestled in the Araku Valley, a region renowned for its rich biodiversity and perfect coffee-growing conditions.
+      </p>
+    </div>
+    
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-accent"></div>
+        <h4 class="metric-label">Freshness</h4>
+        <p class="metric-value">Roasted & ground to order</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-accent"></div>
+        <h4 class="metric-label">Roast Profile</h4>
+        <p class="metric-value">Medium Dark</p>
+      </div>
+      <div class="metric-card">
+        <div class="metric-accent"></div>
+        <h4 class="metric-label">Flavor Notes</h4>
+        <p class="metric-value">Dark chocolate, Toffee & Sugarcane</p>
+      </div>
+    </div>
+
+    <div class="editorial-outro">
+      <p>We believe that great coffee begins with great beans. By focusing on single-origin, organic coffee, we ensure that each cup you enjoy is not only delicious but also supports sustainable farming practices and the local communities of the Araku Valley.</p>
+      <p>Join us in savoring the distinct taste of our exceptional coffee beans. Each sip is a journey to the heart of the Araku Valley, where tradition and quality come together to create the perfect cup.</p>
+    </div>
+  </section>
 </div>
 
 <footer class="site-footer">
   <div class="footer-bottom">
     <div class="footer-contact">
       <img src={restaurant.logo} alt={restaurant.name} class="footer-logo-img" />
-      <h2 class="footer-logo">{restaurant.name}</h2>
       
       <div class="contact-details">
-        <p class="contact-item"><strong>Our Location:</strong><br>{restaurant.location}</p>
         <p class="contact-item"><strong>Phone:</strong><br><a href="tel:{restaurant.phone.replace(/\\s+/g, '')}">{restaurant.phone}</a></p>
         <p class="contact-item"><strong>Email:</strong><br>
           {#each restaurant.emails as email}
@@ -184,6 +214,99 @@
     font-style: italic;
   }
 
+  /* ── Coffee Story Redesign ─────────────────────── */
+  .coffee-story {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 16px 64px;
+    color: var(--text-primary);
+  }
+
+  .editorial-intro {
+    text-align: center;
+    margin-bottom: 48px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .editorial-title {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  .editorial-quote {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: var(--brand-navy);
+    margin: 0;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: 600px) {
+    .metrics-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+  }
+
+  .metric-card {
+    background-color: var(--brand-navy);
+    border: 1px solid rgba(193, 159, 95, 0.15);
+    padding: 32px 24px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .metric-accent {
+    width: 32px;
+    height: 2px;
+    background-color: var(--accent);
+    margin: 0 auto 24px;
+  }
+
+  .metric-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 12px;
+  }
+
+  .metric-value {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--bg-primary);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .editorial-outro {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .editorial-outro p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+
   /* ── Footer ────────────────────────────────────── */
   .site-footer {
     display: flex;
@@ -200,17 +323,9 @@
   }
 
   .footer-logo-img {
-    width: 60px;
+    width: 90px;
     height: auto;
-    margin-bottom: 8px;
-  }
-
-  .footer-logo {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    letter-spacing: 2px;
     margin-bottom: 24px;
-    margin-top: 0;
   }
 
   .footer-contact {

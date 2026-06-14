@@ -1,12 +1,11 @@
 export const restaurant = {
   name: "Olea Bakes",
-  description: "Premium Baked Goods & Cafe",
+  description: "Premium Coffee Experience",
   phone: "+91 7736 232 111",
   emails: ["hello@oleabakes.com", "order@oleabakes.com"],
   instagram: "https://www.instagram.com/oleabakes?igsh=eWRwanVyMmFmMGty&utm_source=qr",
   facebook: "https://www.facebook.com/p/OLEA-BAKES-100089343103175/",
   whatsapp: "https://api.whatsapp.com/send/?phone=917736232111&text&type=phone_number&app_absent=0",
-  location: "Johny's Tower, Kuriachira, Thrissur",
   logo: "/images/Logo.png",
   heroImage: "/images/Logo.png",
 };

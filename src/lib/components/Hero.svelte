@@ -7,17 +7,11 @@
 <div class="hero">
 
   <div class="hero-content">
-    <h3 class="subtitle">Olea Bakery & Resto Cafe</h3>
-    <h1 class="title">Premium Baked Goods & Cafe</h1>
-    <p class="desc">Explore our crafted coffees, signature frappes, and flavorful bites. Make every visit memorable at {restaurant.name}.</p>
+    <h1 class="title">Premium Coffee Experience</h1>
+    <p class="desc">Explore our crafted coffees, signature frappes, and single-origin brews. Make every visit memorable at {restaurant.name}.</p>
     
     <div class="image-container">
       <img src={restaurant.logo} alt={restaurant.name} class="hero-logo" />
-    </div>
-
-    <div class="bottom-content">
-      <h3 class="subtitle">Crafted Coffee & Beverages</h3>
-      <p class="desc">Discover our standout espresso drinks, signature frappes, and premium teas. At {restaurant.name}, our menu is crafted to perfection.</p>
     </div>
   </div>
 </div>
@@ -69,10 +63,6 @@
     max-width: 200px;
     height: auto;
     object-fit: contain;
-  }
-
-  .bottom-content {
-    margin-top: 32px;
   }
 
   @media (min-width: 768px) {
