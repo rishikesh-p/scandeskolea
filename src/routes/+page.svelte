@@ -33,10 +33,9 @@
         <div class="accordion-item">
           <button class="accordion-header" onclick={() => toggleCategory(category.id)}>
             <div class="header-content">
-              <span class="icon">🍹</span>
               <span class="category-name">{category.name}</span>
             </div>
-            <svg class="arrow {openCategories[category.id] ? 'open' : ''}" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg class="arrow {openCategories[category.id] ? 'open' : ''}" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           
           {#if openCategories[category.id]}
@@ -124,8 +123,9 @@
   .accordion-header {
     background-color: var(--brand-navy);
     color: var(--accent);
-    border: none;
-    padding: 16px 24px;
+    border: 1px solid rgba(193, 159, 95, 0.15);
+    border-radius: 4px;
+    padding: 18px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -133,11 +133,21 @@
     font-family: var(--font-sans);
     font-size: 1.1rem;
     font-weight: 600;
-    transition: background-color 0.2s;
+    transition: all 0.2s ease;
+    user-select: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
 
   .accordion-header:hover {
-    background-color: #15223b;
+    background-color: #17243e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-color: rgba(193, 159, 95, 0.3);
+  }
+
+  .accordion-header:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   }
 
   .header-content {
